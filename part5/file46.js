@@ -1,10 +1,9 @@
-const students=[
-    {id: 1, name:"Janvi", attendance:90,score:80},
-    {id: 1, name:"Nyasa", attendance:80,score:85}
-]
+// const students=[
+//     {id: 1, name:"Janvi", attendance:90,score:80},
+//     {id: 1, name:"Nyasa", attendance:80,score:85}
+// ]
 
-
-function getStudentInfo(id) {
+function getStudentInfo() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const userObj = {
@@ -17,7 +16,7 @@ function getStudentInfo(id) {
   });
 }
 
-function getExamInfo(id) {
+function getExamInfo() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Exam Info Resolved");
@@ -25,23 +24,23 @@ function getExamInfo(id) {
   });
 }
 
-function getAttendanceInfo(id) {
+function getAttendanceInfo() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Attendance Info Resolved");
     }, 1000);
   });
 }
-// function displayInfo({ name }) {
-//   console.log(name);
-// }
+function displayInfo({ name }) {
+  console.log(name);
+}
 
 async function main() {
   //   const result = await getStudentInfo();
   const result = await Promise.all([
-    getStudentInfo(studentId),
-    getAttendanceInfo(studentId),
-    getExamInfo(studentId),
+    getStudentInfo(),
+    getAttendanceInfo(),
+    getExamInfo(),
   ]);
   console.log(result)
 //   displayInfo(result);
