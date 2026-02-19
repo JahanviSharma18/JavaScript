@@ -1,6 +1,6 @@
 function user(){
 let password="1234"
-function checkpPassword(inputPassword){
+function checkPassword(inputPassword){
     return password===inputPassword
 }
 return checkPassword
